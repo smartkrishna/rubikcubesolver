@@ -156,7 +156,7 @@ RubiksCube &RubiksCube::invert(MOVE ind) {
             return this->b2();
     }
 }
-
+// this is showing how we are printing on the terminal
 void RubiksCube::print() const {
     cout << "Rubik's Cube:\n\n";
 
@@ -205,6 +205,7 @@ void RubiksCube::print() const {
     cout << "\n";
 }
 
+// this is function for shuffling 
 vector<RubiksCube::MOVE> RubiksCube::randomShuffleCube(unsigned int times) {
     vector<MOVE> moves_performed;
     srand(time(0));
@@ -216,7 +217,7 @@ vector<RubiksCube::MOVE> RubiksCube::randomShuffleCube(unsigned int times) {
     return moves_performed;
 }
 
-//Helper function returns string of corner
+//Helper function returns string of corner it return current instance
 string RubiksCube::getCornerColorString(uint8_t ind) const {
     string str = "";
 
@@ -279,7 +280,7 @@ string RubiksCube::getCornerColorString(uint8_t ind) const {
     }
     return str;
 }
-
+// this would return what i sthe correct position of that cube 
 uint8_t RubiksCube::getCornerIndex(uint8_t ind) const {
     string corner = getCornerColorString(ind);
 
@@ -306,7 +307,7 @@ uint8_t RubiksCube::getCornerIndex(uint8_t ind) const {
     }
     return ret;
 }
-
+// this show how much it rotate whether it is twisted by 1 position 2 pos or correct pos
 uint8_t RubiksCube::getCornerOrientation(uint8_t ind) const {
     string corner = getCornerColorString(ind);
 
